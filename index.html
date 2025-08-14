@@ -1,39 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamza's Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #007BFF;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-        }
-        main {
-            padding: 20px;
-        }
-        .contact {
-            background: white;
-            padding: 15px;
-            margin-top: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-    </style>
-</head>
+    <head>
+        <style>
+            /* Contact Section */
+            .contact {
+                background: #ffffff;  /* White background for the contact section */
+                padding: 20px;
+                margin-top: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for distinction */
+                border: 1px solid #ddd; /* Add a light border to make it stand out */
+            }
+    
+            /* Heading and paragraph color */
+            .contact h3 {
+                margin-bottom: 15px;
+                color: #333; /* Dark color for better contrast */
+            }
+    
+            .contact p {
+                margin: 10px 0;
+                color: #333; /* Dark color for better readability */
+            }
+    
+            /* Link styling */
+            .contact a {
+                color: #007bff;  /* Link color */
+                text-decoration: none;
+            }
+    
+            .contact a:hover {
+                text-decoration: underline;
+            }
+    
+            /* Button styling */
+            #copyEmailBtn {
+                background-color: #007bff;
+                color: white;
+                border: none;
+                padding: 5px 10px;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+    
+            #copyEmailBtn:hover {
+                background-color: #0056b3;
+            }
+    
+            /* Success message after copying */
+            #copyMsg {
+                margin-left: 8px;
+                color: green;
+                display: none;
+            }
+        </style>
+    </head>       
 <body>
     <header>
         <h1>Hamza Boudali</h1>
-        <p>Email: <a href="mailto:boudali.hamz@gmail.com" style="color:white;">boudali.hamz@gmail.com</a></p>
+        <section id="contact" class="contact">
+            <h3>Contact</h3>
+            <p>Email (opens email client): 
+              <a href="mailto:boudali.hamz@gmail.com?subject=Website%20Contact">boudali.hamz@gmail.com</a>
+            </p>
+          
+            <p>Or compose in Gmail (web):
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=boudali.hamz@gmail.com&su=Website%20Contact" target="_blank" rel="noopener">
+                Compose in Gmail
+              </a>
+            </p>
+          
+            <p>Or copy my email:
+              <button id="copyEmailBtn" type="button">Copy email</button>
+              <span id="copyMsg" style="margin-left:8px;color:green;display:none;">Copied!</span>
+            </p>
+          
+            <script>
+              document.getElementById('copyEmailBtn').addEventListener('click', function() {
+                navigator.clipboard.writeText('boudali.hamz@gmail.com').then(function() {
+                  const m = document.getElementById('copyMsg');
+                  m.style.display = 'inline';
+                  setTimeout(()=> m.style.display = 'none', 1500);
+                }, function() {
+                  alert('Copy failed — copy manually: boudali.hamz@gmail.com');
+                });
+              });
+            </script>
+        </section>          
     </header>
     <main>
         <section id="about" aria-labelledby="about-heading">
