@@ -8,7 +8,7 @@ const projects = [
     title: 'Business Landing (Demo)',
     description:
       'Responsive one-page landing for local businesses — click-to-call, fast load, and mobile-first. Perfect for local client outreach.',
-    image: '/images/landing.png',
+    image: '/images/Landing.png',
     tags: ['HTML', 'CSS', 'JavaScript', 'Responsive'],
     link: '/landing2.html',
     repo: 'https://github.com/Hamza-Boudali/portfolio' // change if different
@@ -16,7 +16,7 @@ const projects = [
   {
     title: 'Personal Portfolio',
     description: 'This portfolio site — Next.js + Tailwind, deployed on Vercel. Shows demos, contact, and resume.',
-    image: '/images/portfolio.png',
+    image: '/images/Portfolio.png',
     tags: ['Next.js', 'Tailwind', 'Deployment'],
     link: '/',
     repo: 'https://github.com/Hamza-Boudali/portfolio' // change if different
